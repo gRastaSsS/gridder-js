@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Posts from './components/Posts'
+import Login from "./components/Login";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import Register from "./components/Register";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const loggedIn = localStorage.getItem('access_token') != null;
+
+    return (
+        <Router>
+            <div>
+                <Switch>
+                    <Route exact path='/'>{loggedIn ? <Redirect to='/posts'/> : <Redirect to='/sign-in'/>}</Route>
+                    <Route path='/posts' component={Posts}/>
+                    <Route path='/sign-in' component={Login}/>
+                    <Route path='/sign-up' component={Register}/>
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
