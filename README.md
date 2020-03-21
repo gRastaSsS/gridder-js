@@ -3,6 +3,7 @@
 ## Project for Grid & Cloud course on the Faculty of Applied Mathematics and Control Processes of Saint Petersburg University 2020
 
 Launch with following command:
+
 REACT_APP_API_PATH=https://sixroads.net npm start
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
