@@ -40,7 +40,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../grid" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -93,7 +93,7 @@
       <workItem from="1584822150156" duration="2471000" />
       <workItem from="1584825196664" duration="169000" />
       <workItem from="1584825386020" duration="1081000" />
-      <workItem from="1584888206966" duration="4750000" />
+      <workItem from="1584888206966" duration="5807000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1584816225568</created>
@@ -109,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584824569032</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add visible tags list to post">
+      <created>1584904251530</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584904251530</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +127,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Initial" />
     <MESSAGE value="Add environment variable config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add environment variable config" />
+    <MESSAGE value="Add visible tags list to post" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add visible tags list to post" />
   </component>
   <component name="WindowStateProjectService">
     <state x="555" y="181" width="800" height="677" key="#ESLint" timestamp="1584170916258">
@@ -139,18 +147,18 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="693" y="269" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.988@0.27.1920.988" timestamp="1584794536958" />
-    <state x="525" y="92" width="860" height="856" key="CommitChangelistDialog2" timestamp="1584824568857">
+    <state x="525" y="92" width="860" height="856" key="CommitChangelistDialog2" timestamp="1584904250306">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="525" y="92" width="860" height="856" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1584824568857" />
+    <state x="525" y="92" width="860" height="856" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1584904250306" />
     <state x="697" y="298" width="515" height="444" key="EnvironmentVariablesDialog" timestamp="1584823471142">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="697" y="298" width="515" height="444" key="EnvironmentVariablesDialog/0.27.1920.988@0.27.1920.988" timestamp="1584823471142" />
-    <state x="743" y="278" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584824686820">
+    <state x="743" y="278" width="424" height="484" key="FileChooserDialogImpl" timestamp="1584904271341">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="743" y="278" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1584824686820" />
+    <state x="743" y="278" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.988@0.27.1920.988" timestamp="1584904271341" />
     <state width="1874" height="257" key="GridCell.Tab.0.bottom" timestamp="1584824687981">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -167,10 +175,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state width="1874" height="257" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1584824687981" />
-    <state x="555" y="256" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1584824570436">
+    <state x="555" y="256" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1584904254366">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="555" y="256" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.988@0.27.1920.988" timestamp="1584824570436" />
+    <state x="555" y="256" width="800" height="528" key="Vcs.Push.Dialog.v2/0.27.1920.988@0.27.1920.988" timestamp="1584904254366" />
     <state x="616" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1584170355916">
       <screen x="0" y="27" width="1920" height="988" />
     </state>

@@ -102,14 +102,12 @@ export default class Posts extends Component {
                 search_query: '',
                 current_page: 1
             });
+            this.updatePosts();
         })
     }
 
     handlePageChange(pageNumber) {
         this.setState({ current_page: pageNumber });
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
         this.updatePosts();
     }
 
@@ -138,7 +136,7 @@ export default class Posts extends Component {
                         <form onSubmit={this.handleSearchSubmit.bind(this)}>
                             <div className="form-group">
                                 <label htmlFor="search">Search posts here</label>
-                                <input onChange={this.handleSearchInput.bind(this)} type="text" className="form-control" id="search" placeholder="Query"/>
+                                <input onChange={this.handleSearchInput.bind(this)} type="text" className="form-control" id="search" placeholder="Query" value={this.state.search_query}/>
                                 <br/>
                                 <span className="form-text text-muted">Leave empty for no filtering</span>
                                 <span className="form-text text-muted">Type [word0 word1] to search by any word in braces</span>
