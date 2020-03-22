@@ -41,6 +41,7 @@ export default class Posts extends Component {
                                 <div className="card-header">{post.author} <Timestamp relative date={post.updatedAt / 1000}/></div>
                                 <div className="card-body">
                                     <p className="card-text">{post.content}</p>
+                                    {post.tags.map(tag => <a className="card-link">{'#' + tag + ' '}</a>)}
                                 </div>
                             </div>
                             <br/>
@@ -78,9 +79,11 @@ export default class Posts extends Component {
     }
 
     handleCreateSubmit(event) {
-        //event.preventDefault();
+        event.preventDefault();
         const regexp = /#[A-Za-z0-9]*/g;
-        const tags = this.state.content_text.match(regexp).map(tag => tag.substring(1));
+        const matchArray = this.state.content_text.match(regexp);
+        const tags = matchArray === null ? [] : matchArray.map(tag => tag.substring(1));
+
         fetch(API_PATH + '/posts', {
             method: 'POST',
             body: JSON.stringify({
@@ -92,11 +95,21 @@ export default class Posts extends Component {
                 'Authorization' : 'Bearer ' + localStorage.getItem('access_token'),
                 'Content-Type' : 'application/json'
             }
-        }).then()
+        }).then(() => {
+            this.setState({
+                chars_left: this.max_chars,
+                content_text: '',
+                search_query: '',
+                current_page: 1
+            });
+        })
     }
 
     handlePageChange(pageNumber) {
         this.setState({ current_page: pageNumber });
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
         this.updatePosts();
     }
 
@@ -112,7 +125,7 @@ export default class Posts extends Component {
                         <form onSubmit={this.handleCreateSubmit.bind(this)}>
                             <div className="form-group">
                                 <label htmlFor="textarea1">Write your post here. Mark tags with # symbol</label>
-                                <textarea onChange={this.handleContentInput.bind(this)} className="form-control" id="textarea1" rows="3" maxLength={this.max_chars}/>
+                                <textarea onChange={this.handleContentInput.bind(this)} className="form-control" id="textarea1" rows="3" maxLength={this.max_chars} value={this.state.content_text}/>
                                 <p>Characters Left: {this.state.chars_left}</p>
                                 <button type="submit" className="btn btn-primary">Create</button>
                             </div>
@@ -127,10 +140,11 @@ export default class Posts extends Component {
                                 <label htmlFor="search">Search posts here</label>
                                 <input onChange={this.handleSearchInput.bind(this)} type="text" className="form-control" id="search" placeholder="Query"/>
                                 <br/>
-                                <span className="form-text text-muted">[word0 word1] to search by any word</span>
-                                <span className="form-text text-muted">(word0 word1) to search by all words</span>
-                                <span className="form-text text-muted">{'{'}word0 word1{'}'} to search by tags</span>
-                                <span className="form-text text-muted">"word0 word1" to search by phrase</span>
+                                <span className="form-text text-muted">Leave empty for no filtering</span>
+                                <span className="form-text text-muted">Type [word0 word1] to search by any word in braces</span>
+                                <span className="form-text text-muted">Type (word0 word1) to search by all words in braces</span>
+                                <span className="form-text text-muted">Type {'{'}word0 word1{'}'} to search by tags in braces</span>
+                                <span className="form-text text-muted">Type "word0 word1" to search by phrase in braces</span>
                                 <br/>
                                 <button type="submit" className="btn btn-primary">Search</button>
                             </div>
