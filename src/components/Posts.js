@@ -41,7 +41,7 @@ export default class Posts extends Component {
                                 <div className="card-header">{post.author} <Timestamp relative date={post.updatedAt / 1000}/></div>
                                 <div className="card-body">
                                     <p className="card-text">{post.content}</p>
-                                    {post.tags.map(tag => <a className="card-link">{'#' + tag + ' '}</a>)}
+                                    {post.tags.map(tag => <a className="card-link" key={tag}>{'#' + tag + ' '}</a>)}
                                 </div>
                             </div>
                             <br/>
@@ -107,8 +107,12 @@ export default class Posts extends Component {
     }
 
     handlePageChange(pageNumber) {
-        this.setState({ current_page: pageNumber });
-        this.updatePosts();
+        this.setState(
+            {
+                current_page: pageNumber
+            }, 
+            () => this.updatePosts()
+        );
     }
 
     componentDidMount() {
